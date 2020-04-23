@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "test": "nyc mocha test/",
     "pre-commit-starting-msg": "echo 'Pre-commit checks starting...' && exit 0",
-    "pre-commit-ending-msg": "echo 'Pre-commit checks finished. && exit 0'"
+    "pre-commit-ending-msg": "echo 'Pre-commit checks finished.' && exit 0"
   },
   "pre-commit": [
     "pre-commit-starting-msg",
