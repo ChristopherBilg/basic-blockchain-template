@@ -1,0 +1,29 @@
+{
+  "name": "basic-blockchain-template",
+  "version": "1.0.0",
+  "description": "A rudimentary blockchain created as an NPM module for templating purposes.",
+  "main": "src/index.js",
+  "private": true,
+  "scripts": {
+    "start": "node src/index.js",
+    "lint": "eslint .",
+    "test": "nyc mocha test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristopherBilg/basic-blockchain-template.git"
+  },
+  "author": "Christopher Bilger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChristopherBilg/basic-blockchain-template/issues"
+  },
+  "homepage": "https://github.com/ChristopherBilg/basic-blockchain-template#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.1"
+  }
+}
