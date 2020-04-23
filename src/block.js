@@ -1,5 +1,7 @@
+const sha512 = require('crypto-js/sha512');
+
 /**
- * The Individual block in the blockchain.
+ * The individual block in the blockchain.
  */
 class Block {
   /**
@@ -13,5 +15,18 @@ class Block {
     this.timestamp = timestamp;
     this.data = data;
     this.previousHash = previousHash;
+    this.hash = this.calculateHash();
+  }
+
+  /**
+   * @return {String} The hash of this block.
+   */
+  calculateHash() {
+    return sha512(this.index +
+                  this.timestamp +
+                  this.previousHash +
+                  JSON.stringify(this.data)).toString();
   }
 }
+
+exports.Block = Block;

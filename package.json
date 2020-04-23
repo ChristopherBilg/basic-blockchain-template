@@ -25,5 +25,8 @@
     "eslint-config-google": "^0.14.0",
     "mocha": "^7.1.1",
     "nyc": "^15.0.1"
+  },
+  "dependencies": {
+    "crypto-js": "^4.0.0"
   }
 }
