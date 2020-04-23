@@ -3,7 +3,7 @@ const Block = require('../src/block.js').Block;
 
 describe('Block Tests', () => {
   const block1 = new Block(0, -1, -1, -1);
-  const knownHash = '85588a7a4680f758c3a0ef6855e04518a083f1f5ea12cc7d1cd389c692d93a04251bf31dd0f971d4ce42aca5718a0da1a273ba9540aefecbab9817941527c42c';
+  const knownHash = '81fdd0a0e79a268a8817552b9cb59db48844fab1c1dc9190006c9273674de38e89f923961e5a31e2b5fa298cc21ce7cdfc22bc86c108eb3fe29f370398f34ba4';
 
   it('the genesis block hash should equal the known hash for itself', () => {
     assert.equal(block1.calculateHash(), knownHash);

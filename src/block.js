@@ -15,6 +15,7 @@ class Block {
     this.timestamp = timestamp;
     this.data = data;
     this.previousHash = previousHash;
+    this.nonce = 0;
     this.hash = this.calculateHash();
   }
 
@@ -24,8 +25,19 @@ class Block {
   calculateHash() {
     return sha512(this.index +
                   this.timestamp +
+                  JSON.stringify(this.data) +
                   this.previousHash +
-                  JSON.stringify(this.data)).toString();
+                  this.nonce).toString();
+  }
+
+  /**
+   * @param {Number} difficulty - The required number of zeroes starting the hash.
+   */
+  mineBlock(difficulty) {
+    while (this.hash.substring(0, difficulty) !== Array(difficulty+1).join('0')) {
+      this.nonce++;
+      this.hash = this.calculateHash();
+    }
   }
 }
 
