@@ -7,8 +7,16 @@
   "scripts": {
     "start": "node src/index.js",
     "lint": "eslint .",
-    "test": "nyc mocha test/"
+    "test": "nyc mocha test/",
+    "pre-commit-starting-msg": "echo 'Pre-commit checks starting...' && exit 0",
+    "pre-commit-ending-msg": "echo 'Pre-commit checks finished. && exit 0'"
   },
+  "pre-commit": [
+    "pre-commit-starting-msg",
+    "lint",
+    "test",
+    "pre-commit-ending-msg"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ChristopherBilg/basic-blockchain-template.git"
@@ -24,7 +32,8 @@
     "eslint": "^6.8.0",
     "eslint-config-google": "^0.14.0",
     "mocha": "^7.1.1",
-    "nyc": "^15.0.1"
+    "nyc": "^15.0.1",
+    "pre-commit": "^1.2.2"
   },
   "dependencies": {
     "crypto-js": "^4.0.0"
